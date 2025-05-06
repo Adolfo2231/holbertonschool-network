@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# Script to display listening ports with PID and program names
+
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    # macOS version
+    netstat -anv | grep LISTEN
+else
+    # Linux version
+    netstat -tulpn
+fi 
